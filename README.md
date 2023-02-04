@@ -8,38 +8,38 @@
 ### brick_strategies:
 
 - **CollisionStrategy**: General type for brick strategies. All brick strategies extends this class.
-- PuckStrategy: Class extending CollisionStrategy. Introduces several pucks instead of brick once removed.
-- AdditionalPaddleStrategy: Class extending CollisionStrategy. Introduces extra
+- **PuckStrategy**: Class extending CollisionStrategy. Introduces several pucks instead of brick once removed.
+- **AdditionalPaddleStrategy**: Class extending CollisionStrategy. Introduces extra
  paddle to game window which remains until colliding NUM_COLLISIONS_FOR_MOCK_PADDLE_DISAPPEARANCE with
  other game objects.
-- CameraStrategy: Class extending CollisionStrategy.
+- **CameraStrategy**: Class extending CollisionStrategy.
  Changes camera focus from ground to ball until ball collides NUM_BALL_COLLISIONS_TO_TURN_OFF times.
-- HeartStrategy: Class extending CollisionStrategy.
+- **HeartStrategy**: Class extending CollisionStrategy.
  Throws heart to ground and if the paddle pick the heart it will add a new live to the player.
--DoubleStrategy: Class extending CollisionStrategy.
+- **DoubleStrategy**: Class extending CollisionStrategy.
  Add double strategies from the ones extending CollisionStrategy including itself. It can have a maximum of
  3 strategies according to the implementation given.
-- BrickStrategyFactory: Factory class for creating Collision strategies.
+- **BrickStrategyFactory**: Factory class for creating Collision strategies.
 
 ### gameobjects:
 
-- AdditionalPaddle: Class that extends Paddle class and will be the object that follows AdditionalPaddleStrategy.
-- Ball: Main ball of the game which extends the GameObject. It will be in charge of changing speed directions
+- **AdditionalPaddle**: Class that extends Paddle class and will be the object that follows AdditionalPaddleStrategy.
+- **Ball**: Main ball of the game which extends the GameObject. It will be in charge of changing speed directions
 each time it collides with an object of it same layer (borders, bricks, paddle). It will hold a counter
 for the number of collisions made so far since initialization.
-- GraphicLifeCounter: Class that extends GameObject, it wil not hold any renderable but will be in charge of generating new lives
+- **GraphicLifeCounter**: Class that extends GameObject, it wil not hold any renderable but will be in charge of generating new lives
 that will be rendered in the screen each time the user lose or win a live or liveCounter get updated.
-- NumericLiveCounter: Class that extends the GameObject and which will be responsible of rendering the number of lives in text.
+- **NumericLiveCounter**: Class that extends the GameObject and which will be responsible of rendering the number of lives in text.
 As same as GraphicLifeCounter it will update lives each time liveCounter get updated.
-- Brick: Class that extends GameObject and will represent each brick of the game. Each time an object collide with
+- **Brick**: Class that extends GameObject and will represent each brick of the game. Each time an object collide with
 him, it will call the strategy which identifies it.
-- BallCollisionCounter: Class that extends GameObject with no render properties and will be in charge of handling ball collisions.
+- **BallCollisionCounter**: Class that extends GameObject with no render properties and will be in charge of handling ball collisions.
 According to our game implementation, it will be used by the CameraStrategy in order to turnOff the camera
 after numberOfCollisions.
-- Paddle: Main paddle of the game which extends GameObject. It will be in charge of preventing the main ball of
+- **Paddle**: Main paddle of the game which extends GameObject. It will be in charge of preventing the main ball of
 touching the ground and the user should use it move RIGHT_LEFT and RIGHT_LEFT keys in order to break all
 the bricks of the game.
-- HeartMovement: Heart representing the ones falling from the bricks implemented by the HeartStrategy. If it gets out of
+- **HeartMovement**: Heart representing the ones falling from the bricks implemented by the HeartStrategy. If it gets out of
  the scopes of the ground it will be removed from the gameObjectsCollection of the game.
 
 ## Design and implementation issues:
