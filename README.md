@@ -1,3 +1,6 @@
+<img align="center" alt="HTML"  src="https://github.com/yosefede06/Arkanoid-Game-OOP-java/blob/main/screen1.png" />
+<img align="center" alt="HTML"  src="https://github.com/yosefede06/Arkanoid-Game-OOP-java/blob/main/screen2.png" />
+
 Download library: https://danthe1st.itch.io/danogamelab
 Steps to run game using IntelliJ IDEA: 
 Project Structure -> Modules -> Dependencies -> + -> JARs or Directories -> Select DanoGameLab.jar and src file inside the DanoGameLab unzipped.
