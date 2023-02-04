@@ -1,7 +1,9 @@
 <p float="left">
-  <img src="https://github.com/yosefede06/Arkanoid-Game-OOP-java/blob/main/screen1.png" width="300" />
-   <img src="https://github.com/yosefede06/Arkanoid-Game-OOP-java/blob/main/screen2.png" width="300" />
+  <img src="https://github.com/yosefede06/Arkanoid-Game-OOP-java/blob/main/screen1.png" width="500" />
 </p>
+<p float="right">
+ <img src="https://github.com/yosefede06/Arkanoid-Game-OOP-java/blob/main/screen2.png" width="500" />
+ </p>
 
 Download library: https://danthe1st.itch.io/danogamelab
 Steps to run game using IntelliJ IDEA: 
