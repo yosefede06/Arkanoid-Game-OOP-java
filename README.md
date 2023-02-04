@@ -23,23 +23,23 @@
 
 ### gameobjects:
 
--AdditionalPaddle: Class that extends Paddle class and will be the object that follows AdditionalPaddleStrategy.
--Ball: Main ball of the game which extends the GameObject. It will be in charge of changing speed directions
+- AdditionalPaddle: Class that extends Paddle class and will be the object that follows AdditionalPaddleStrategy.
+- Ball: Main ball of the game which extends the GameObject. It will be in charge of changing speed directions
 each time it collides with an object of it same layer (borders, bricks, paddle). It will hold a counter
 for the number of collisions made so far since initialization.
--GraphicLifeCounter: Class that extends GameObject, it wil not hold any renderable but will be in charge of generating new lives
+- GraphicLifeCounter: Class that extends GameObject, it wil not hold any renderable but will be in charge of generating new lives
 that will be rendered in the screen each time the user lose or win a live or liveCounter get updated.
--NumericLiveCounter: Class that extends the GameObject and which will be responsible of rendering the number of lives in text.
+- NumericLiveCounter: Class that extends the GameObject and which will be responsible of rendering the number of lives in text.
 As same as GraphicLifeCounter it will update lives each time liveCounter get updated.
--Brick: Class that extends GameObject and will represent each brick of the game. Each time an object collide with
+- Brick: Class that extends GameObject and will represent each brick of the game. Each time an object collide with
 him, it will call the strategy which identifies it.
--BallCollisionCounter: Class that extends GameObject with no render properties and will be in charge of handling ball collisions.
+- BallCollisionCounter: Class that extends GameObject with no render properties and will be in charge of handling ball collisions.
 According to our game implementation, it will be used by the CameraStrategy in order to turnOff the camera
 after numberOfCollisions.
--Paddle: Main paddle of the game which extends GameObject. It will be in charge of preventing the main ball of
+- Paddle: Main paddle of the game which extends GameObject. It will be in charge of preventing the main ball of
 touching the ground and the user should use it move RIGHT_LEFT and RIGHT_LEFT keys in order to break all
 the bricks of the game.
--HeartMovement: Heart representing the ones falling from the bricks implemented by the HeartStrategy. If it gets out of
+- HeartMovement: Heart representing the ones falling from the bricks implemented by the HeartStrategy. If it gets out of
  the scopes of the ground it will be removed from the gameObjectsCollection of the game.
 
 ## Design and implementation issues:
