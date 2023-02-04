@@ -4,23 +4,23 @@ src:
     - BrickerGameManager: This class is responsible for game initialization, holding references for game objects and
      calling update methods for every update iteration. Entry point for code should be in a main method in this class.
 
-brick_strategies:
+### brick_strategies:
 
-    - CollisionStrategy: General type for brick strategies. All brick strategies extends this class.
-    - PuckStrategy: Class extending CollisionStrategy. Introduces several pucks instead of brick once removed.
-    - AdditionalPaddleStrategy: Class extending CollisionStrategy. Introduces extra
-     paddle to game window which remains until colliding NUM_COLLISIONS_FOR_MOCK_PADDLE_DISAPPEARANCE with
-     other game objects.
-    - CameraStrategy: Class extending CollisionStrategy.
-     Changes camera focus from ground to ball until ball collides NUM_BALL_COLLISIONS_TO_TURN_OFF times.
-    - HeartStrategy: Class extending CollisionStrategy.
-     Throws heart to ground and if the paddle pick the heart it will add a new live to the player.
-    -DoubleStrategy: Class extending CollisionStrategy.
-     Add double strategies from the ones extending CollisionStrategy including itself. It can have a maximum of
-     3 strategies according to the implementation given.
-    - BrickStrategyFactory: Factory class for creating Collision strategies.
+- CollisionStrategy: General type for brick strategies. All brick strategies extends this class.
+- PuckStrategy: Class extending CollisionStrategy. Introduces several pucks instead of brick once removed.
+- AdditionalPaddleStrategy: Class extending CollisionStrategy. Introduces extra
+ paddle to game window which remains until colliding NUM_COLLISIONS_FOR_MOCK_PADDLE_DISAPPEARANCE with
+ other game objects.
+- CameraStrategy: Class extending CollisionStrategy.
+ Changes camera focus from ground to ball until ball collides NUM_BALL_COLLISIONS_TO_TURN_OFF times.
+- HeartStrategy: Class extending CollisionStrategy.
+ Throws heart to ground and if the paddle pick the heart it will add a new live to the player.
+-DoubleStrategy: Class extending CollisionStrategy.
+ Add double strategies from the ones extending CollisionStrategy including itself. It can have a maximum of
+ 3 strategies according to the implementation given.
+- BrickStrategyFactory: Factory class for creating Collision strategies.
 
-gameobjects:
+### gameobjects:
 
     -AdditionalPaddle:
         Class that extends Paddle class and will be the object that follows AdditionalPaddleStrategy.
@@ -53,24 +53,24 @@ gameobjects:
 
 3 main decisions have been made for the implementation of the game:
 
-    1) A class for the Puck balls wasn't implemented. Instead, each puck ball will be an instance of the Ball class.
-    This decision was made since there was no difference on the activity of both classes that already the Ball
-    class wouldn't take care of by calling there methods. Therefore, I decided to take profit of the Ball
-    encapsulation to save unnecessary lines of code. The only thing we need to take care of here is to be able
-    to identify the main Ball from the puck balls that could appear in the game. To do that we've defined a field
-    for the main Ball on the BrickerGameManager.
+1) A class for the Puck balls wasn't implemented. Instead, each puck ball will be an instance of the Ball class.
+This decision was made since there was no difference on the activity of both classes that already the Ball
+class wouldn't take care of by calling there methods. Therefore, I decided to take profit of the Ball
+encapsulation to save unnecessary lines of code. The only thing we need to take care of here is to be able
+to identify the main Ball from the puck balls that could appear in the game. To do that we've defined a field
+for the main Ball on the BrickerGameManager.
 
-    2) All the special strategies will extend the CollisionStrategy. All strategies follows the same pattern a ball
-    collides the brick and calls the onCollision method which is override from the CollisionStrategy. Then it
-    updates the number of bricks by decrementing the counter and at the end activates the power by calling the
-    innerOnCollision method. Is important to remark that we won't always have one only strategy for each brick of
-    the game. Therefore sometimes we will want to activate the strategy's power without making updates updates on
-    the brick, that's why innerOnCollision was defined as a public method, in order to let other strategies to use
-    there power without making updates on the brick counter.
+2) All the special strategies will extend the CollisionStrategy. All strategies follows the same pattern a ball
+collides the brick and calls the onCollision method which is override from the CollisionStrategy. Then it
+updates the number of bricks by decrementing the counter and at the end activates the power by calling the
+innerOnCollision method. Is important to remark that we won't always have one only strategy for each brick of
+the game. Therefore sometimes we will want to activate the strategy's power without making updates updates on
+the brick, that's why innerOnCollision was defined as a public method, in order to let other strategies to use
+there power without making updates on the brick counter.
 
-    3) DoubleStrategy class will received the StrategyFactory on the constructor. This decision was made since
-    we don't have to struggle with more parameters, StrategyFactory already provides us the parameters we need for
-    the initialization therefore this approach enhances the comprehension of the class.
+3) DoubleStrategy class will received the StrategyFactory on the constructor. This decision was made since
+we don't have to struggle with more parameters, StrategyFactory already provides us the parameters we need for
+the initialization therefore this approach enhances the comprehension of the class.
 
 ## Answers to questions:
 
@@ -80,14 +80,14 @@ gameobjects:
     Otherwise, there are 3 options, which in all of them we are already deciding that 3 strategies behaviors
     will be returned.
 
-        i) Both numbers are equal to 4. In which case we randomly sample 3 numbers from 0-3 (3 included,
-        representing the special strategies not including the DoubleStrategy).
+    i) Both numbers are equal to 4. In which case we randomly sample 3 numbers from 0-3 (3 included,
+    representing the special strategies not including the DoubleStrategy).
 
-        ii) If just the first number equals to 4, then we sample two more strategies without including
-        the DoubleStrategy and return the those two corresponding strategies with the one of the second number.
+    ii) If just the first number equals to 4, then we sample two more strategies without including
+    the DoubleStrategy and return the those two corresponding strategies with the one of the second number.
 
-        iii) If just the second number equals to 4, then we sample two more strategies without including
-        the DoubleStrategy and return the those two corresponding strategies with the one of the first number.
+    iii) If just the second number equals to 4, then we sample two more strategies without including
+    the DoubleStrategy and return the those two corresponding strategies with the one of the first number.
 
 2)
     a) - What was the design you chose so that your child could have more than one behavior?
