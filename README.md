@@ -74,20 +74,22 @@ the initialization therefore this approach enhances the comprehension of the cla
 
 ## Answers to questions:
 
-1) How did you limit the amount of double behaviors to 3 behaviors?
-    First of all, two random from 0-4 (including 4, representing the special strategies
-    including the DoubleStrategy) were sampled. If both sampled numbers are less then we finished.
-    Otherwise, there are 3 options, which in all of them we are already deciding that 3 strategies behaviors
-    will be returned.
+### 1) 
+How did you limit the amount of double behaviors to 3 behaviors?
 
-    i) Both numbers are equal to 4. In which case we randomly sample 3 numbers from 0-3 (3 included,
-    representing the special strategies not including the DoubleStrategy).
+First of all, two random from 0-4 (including 4, representing the special strategies
+including the DoubleStrategy) were sampled. If both sampled numbers are less then we finished.
+Otherwise, there are 3 options, which in all of them we are already deciding that 3 strategies behaviors
+will be returned.
 
-    ii) If just the first number equals to 4, then we sample two more strategies without including
-    the DoubleStrategy and return the those two corresponding strategies with the one of the second number.
+i) Both numbers are equal to 4. In which case we randomly sample 3 numbers from 0-3 (3 included,
+representing the special strategies not including the DoubleStrategy).
 
-    iii) If just the second number equals to 4, then we sample two more strategies without including
-    the DoubleStrategy and return the those two corresponding strategies with the one of the first number.
+ii) If just the first number equals to 4, then we sample two more strategies without including
+the DoubleStrategy and return the those two corresponding strategies with the one of the second number.
+
+iii) If just the second number equals to 4, then we sample two more strategies without including
+the DoubleStrategy and return the those two corresponding strategies with the one of the first number.
 
 ### 2)
 
