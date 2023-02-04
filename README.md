@@ -1,6 +1,6 @@
 <p float="left">
-  <img src="https://github.com/yosefede06/Arkanoid-Game-OOP-java/blob/main/screen1.png" width="100" />
-   <img src="https://github.com/yosefede06/Arkanoid-Game-OOP-java/blob/main/screen2.png" width="100" />
+  <img src="https://github.com/yosefede06/Arkanoid-Game-OOP-java/blob/main/screen1.png" width="300" />
+   <img src="https://github.com/yosefede06/Arkanoid-Game-OOP-java/blob/main/screen2.png" width="300" />
 </p>
 
 Download library: https://danthe1st.itch.io/danogamelab
