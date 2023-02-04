@@ -2,12 +2,12 @@
 
 ### src:
 
-- BrickerGameManager: This class is responsible for game initialization, holding references for game objects and
+- **BrickerGameManager**: This class is responsible for game initialization, holding references for game objects and
  calling update methods for every update iteration. Entry point for code should be in a main method in this class.
 
 ### brick_strategies:
 
-- CollisionStrategy: General type for brick strategies. All brick strategies extends this class.
+- **CollisionStrategy**: General type for brick strategies. All brick strategies extends this class.
 - PuckStrategy: Class extending CollisionStrategy. Introduces several pucks instead of brick once removed.
 - AdditionalPaddleStrategy: Class extending CollisionStrategy. Introduces extra
  paddle to game window which remains until colliding NUM_COLLISIONS_FOR_MOCK_PADDLE_DISAPPEARANCE with
