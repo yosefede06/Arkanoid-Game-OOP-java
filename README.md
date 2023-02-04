@@ -89,23 +89,24 @@ the initialization therefore this approach enhances the comprehension of the cla
     iii) If just the second number equals to 4, then we sample two more strategies without including
     the DoubleStrategy and return the those two corresponding strategies with the one of the first number.
 
-2)
-    a) - What was the design you chose so that your child could have more than one behavior?
-    b) - How does the solution support the extension of a larger amount of behaviors in a single brick?
+### 2)
 
-   a) All the special strategies will extend the CollisionStrategy. All strategies follows the same pattern a ball
-   collides the brick and calls the onCollision method which is override from the CollisionStrategy. Then it
-   updates the number of bricks by decrementing the counter and at the end activates the power by calling the
-   innerOnCollision method. Is important to remark that we won't always have one only strategy for each brick of
-   the game. Therefore sometimes we will want to activate the strategy's power without making updates updates on
-   the brick, that's why innerOnCollision was defined as a public method, in order to let other strategies to use
-   there power without making updates on the brick counter. (This question was already answered when remarking all
-   the design implementations).
+a) - What was the design you chose so that your child could have more than one behavior?
+b) - How does the solution support the extension of a larger amount of behaviors in a single brick?
 
-   b) This solution is useful in the sense that supports the extension of a larger amount of behaviors in a single
-   brick, since each time the doubleStrategy (or any other strategy which follows the same logic) add new
-   strategies to it's field of strategies, the class overriding the onCollision method will call the
-   innerOnCollision from each of the classes saved in the array of strategies and will activate the power of
-   each of them without updating the bricks counter.
+a) All the special strategies will extend the CollisionStrategy. All strategies follows the same pattern a ball
+collides the brick and calls the onCollision method which is override from the CollisionStrategy. Then it
+updates the number of bricks by decrementing the counter and at the end activates the power by calling the
+innerOnCollision method. Is important to remark that we won't always have one only strategy for each brick of
+the game. Therefore sometimes we will want to activate the strategy's power without making updates updates on
+the brick, that's why innerOnCollision was defined as a public method, in order to let other strategies to use
+there power without making updates on the brick counter. (This question was already answered when remarking all
+the design implementations).
+
+b) This solution is useful in the sense that supports the extension of a larger amount of behaviors in a single
+brick, since each time the doubleStrategy (or any other strategy which follows the same logic) add new
+strategies to it's field of strategies, the class overriding the onCollision method will call the
+innerOnCollision from each of the classes saved in the array of strategies and will activate the power of
+each of them without updating the bricks counter.
 
 
