@@ -1,8 +1,9 @@
 ## Files description:
 
-src:
-    - BrickerGameManager: This class is responsible for game initialization, holding references for game objects and
-     calling update methods for every update iteration. Entry point for code should be in a main method in this class.
+### src:
+
+- BrickerGameManager: This class is responsible for game initialization, holding references for game objects and
+ calling update methods for every update iteration. Entry point for code should be in a main method in this class.
 
 ### brick_strategies:
 
