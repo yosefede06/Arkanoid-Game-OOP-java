@@ -1,3 +1,7 @@
+Download library: https://danthe1st.itch.io/danogamelab
+Steps to run game using IntelliJ IDEA: 
+Project Structure -> Modules -> Dependencies -> + -> JARs or Directories -> Select DanoGameLab.jar and src file inside the DanoGameLab unzipped.
+
 ## Files description:
 
 ### src:
